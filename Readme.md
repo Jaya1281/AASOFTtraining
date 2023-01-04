@@ -11,3 +11,6 @@ git push -u origin main
 git remote add origin https://github.com/Jaya1281/AASOFTtraining.git
 git branch -M main
 git push -u origin main
+
+git config --global user.email "jayashree.1281@gmail.com"
+git config --global user.name "Jayashree NP"
