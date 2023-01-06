@@ -213,3 +213,20 @@ The git reset command can prove to be very useful if we want to update or revert
 If you’re going to reset several older commits, you can change the number to how many commits you want to be reverted, and that will land you back to an earlier snapshot of your project. For example:
 
 git reset --soft HEAD~2
+//GIT LOG//
+Git log
+Created Thursday 05 January 2023
+
+The git log command
+Git tracks changes to a project by maintaining a chain of snapshots or commits. If you are working on a collaborative project, you will find that your repository will have commits from different contributors. The git log command lets you view the commit history for your project.
+
+Entering the git log command in your terminal will allow you to view a list of commits or snapshots that will be sorted based on the time they were created with the latest one at the very top.
+
+Each log will contain information about the author of the commit, displaying their username and email that we set with the git config command (discussed in one of the previous lessons).
+
+The log will also contain a timestamp of when each commit was created along with the commit message.
+
+One more critical piece of information that the log will show is the 40-characters-long unique hash. The hash is vital because it helps identify commits and acts as an excellent way to secure the commit.
+
+The commit hash uses the cryptographic hash function SHA-1. The hash key allows each commit to have integrity. If the hash were to change, we would be able to identify that the commit has been tampered with.
+
