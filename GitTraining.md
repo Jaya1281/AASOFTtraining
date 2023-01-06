@@ -336,3 +336,24 @@ What if we could create a new branch that is a child of the branch that we are c
 Using the -b flag along with git checkout provides us with a convenient way to first implicitly execute git branch and then run git checkout to switch over to the newly created branch immediately. As an example, enter the following command in the terminal below:
 
 git checkout -b new_branch
+
+DELETING A BRANCH
+
+Deleting a branch
+Created Friday 06 January 2023
+
+Deleting a Branch
+--------------------
+
+Learn how to delete a branch from your local repository in this lesson.
+Using git branch to delete a branch
+We can use the git branch command to create, list, rename, and delete a branch. In this lesson, we will take a look at how we can delete a branch from our repository.
+
+The -d flag
+The syntax for deleting a branch is fairly simple:
+
+git branch -d <branch_name>
+
+As always, to double-check that the deletion process has been executed successfully, you can rely on the simple git branch command to verify this. The branch that is deleted should no longer be listed in the output.
+
+Note: You can’t delete the branch you are currently on. You will need to switch over to another branch and then delete it.
