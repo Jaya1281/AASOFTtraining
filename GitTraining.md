@@ -332,7 +332,7 @@ Right now, we need to rely on entering two separate commands to create a branch 
 
 What if we could create a new branch that is a child of the branch that we are currently on and directly switch over to it with just one command? Well, git checkout lets us do that too.
 
-The -b flag
+**The -b flag**
 Using the -b flag along with git checkout provides us with a convenient way to first implicitly execute git branch and then run git checkout to switch over to the newly created branch immediately. As an example, enter the following command in the terminal below:
 
 git checkout -b new_branch
