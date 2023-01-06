@@ -133,3 +133,53 @@ That is more or less the gist of the very basics you will need to know about ter
 --------------------
 
 This is test line
+Creating a new project with git
+Created Thursday 05 January 2023
+
+1. Let’s start by creating a new working directory or folder in the terminal. We’ll call the new working directory test_project. You can create a new directory by using the following command: mkdir test_project
+2. Once we have created the new directory, we will need to set that as the current working directory. We will do that by entering the following command: cd test_project
+3. Once the test_project directory becomes the working directory, which will be initially empty, we will create a plain text file. Let’s call it file1.txt. We will create the new file using this command: touch file1.txt
+4. To verify that the file was created, enter the plain command ls in the terminal window below. It should print all the folders and files present within the working directory, which, in our case, is file1.txt.
+
+GIT INIT COMMAND
+
+The git init command
+Now that we have a working project directory with a file in it, we can initialize Git to track this project and its contents:
+the git init command simply creates an empty repository. Therefore, your project will not automatically come under the ambit of version control with this command alone. What git init does, however, is create a .git directory. The .git directory will contain all the metadata that Git will require for tracking the project.
+
+The subdirectory .git will contain several files and more subdirectories that Git will use to keep track of changes in the project.
+
+--------------------
+The git add command
+
+Now that we have a project that has a file and an empty Git repository set up, we want Git to track the contents of the entire project.
+
+At this point, the git add command will help us. Enter the following command in the test_project directory: git add .( dot)
+--------------------
+The git status command
+To verify what state your files in the repository are in, you can use the git status command. It doesn’t change or update anything. Instead, it prints out which files are modified, staged, or untracked.
+Git commit
+Created Thursday 05 January 2023
+
+Learn how to create your first snapshot with the git commit command.
+
+The git commit command
+Once we have a local repository that is tracking our project, we will move towards creating our very first commit.
+
+A commit is a snapshot of the entire state that your project is in at that moment. Git keeps track of your project through a series, or chain, of commits. The most recent snapshot of your repository is referred to as the HEAD.
+
+As soon as you create a new commit, it will directly link to the HEAD. However, since the latest commit is now the most recent one, it will be considered the HEAD instead, replacing the previous one.
+
+The commit message
+The structure of the commit command is very straight forward:
+git commit -m "What changes occurred within the commit."
+
+From the snippet above, you will notice the -m flag, followed by a string. The string is called the commit message. Usually, the commit message is a phrase that describes what changes or modifications occurred within the commit.
+
+Our first commit
+Let’s move on to creating our first commit. Since it is the first one, let’s have the commit message be “initial commit.”
+
+Enter the following command in the terminal below and see what happens. Please note that before we create a commit, it is a wise decision to use the git status command to check which changes will be reflected in that commit.
+Once you have successfully created your first commit, try entering git status again and check what has changed. All the staged files become part of your initial commit, and there are no other changes to commit anymore.
+
+--------------------
