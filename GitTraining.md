@@ -183,3 +183,33 @@ Enter the following command in the terminal below and see what happens. Please n
 Once you have successfully created your first commit, try entering git status again and check what has changed. All the staged files become part of your initial commit, and there are no other changes to commit anymore.
 
 --------------------
+undo a commit
+Created Thursday 05 January 2023
+
+Undo a Commit
+Let’s learn how to undo or reset a commit from our local repository in this lesson.
+While working on any project, it is common for us to make mistakes. For example, we might accidentally delete files, misunderstood the requirements and code up something else. Or just got stuck in some bug, and now we do not have a working copy of our code.
+
+There are several ways to fix these problems. We can simply nuke the local repository and create a new clone. However, this approach will only work if we have a remote repository to fall back on.
+
+Another option would be to undo all the changes that we have made. But, if our changes are present in multiple files, this process can be time-consuming. There is an easier alternative.
+
+he git reset command
+The git reset command is a useful tool to help fix past mistakes. There are a lot of ways it can be used depending on the scenario.
+
+Unstage files
+Suppose you have staged some files to be committed. But later you change your mind and decide to unstage a few or all of them. Maybe because you do not wish to commit them. To achieve this, we can simply use the following command:git reset
+--------------------
+The --soft flag
+If you want to modify or update your changes from the previous commit but don’t want to remove them completely, you can use the following command:git reset --soft HEAD~1
+he --soft flag changes the state of the committed files to “staged." You can see more clearly what happens when you run the command in a terminal. Note how the output that the git status command produces will change after you reset the most recent commit using the --soft flag. This flag preserves the changes.
+
+The --hard flag
+If you want to completely get rid of the changes that were part of the recent commit, you can use the --hard flag instead. It will reset the changes and not preserve them. 
+git reset --hard HEAD~1
+
+The git reset command can prove to be very useful if we want to update or revert changes made in older commits. The examples shown above dealt with reverting only the most recent commit. You will have noticed the reset commands used in this lesson had the HEAD~1 portion. The number indicates how many commits you want to go back.
+
+If you’re going to reset several older commits, you can change the number to how many commits you want to be reverted, and that will land you back to an earlier snapshot of your project. For example:
+
+git reset --soft HEAD~2
