@@ -262,4 +262,21 @@ This also allows you to switch back and forth between contexts without having to
 Branches out of other branches
 Git lets you create a branch from any other branch. A new branch doesn’t necessarily have to come out of the master branch.
 
+CREATING A BRANCH
 
+Creating a branch
+Created Friday 06 January 2023
+
+	Creating a Branch
+	Learn how Git lets us create branches seamlessly and quickly.
+
+	The git branch command
+	The git branch command is a useful, multi-purpose tool that lets us do a lot of different things. When used as is (without any other options appended), the command will print out all the branches present in the repository and point out which branch we are currently on.
+	--------------------
+	The git branch command will print out the master branch with a prepended asterisk. The asterisk denotes that this also happens to be the branch that is currently active in our repository. In other words, we are currently using the master branch. If there were more branches, their names would also be listed.
+Eg: git branch
+*master
+
+After you create the new branch, enter the plain git branch command to double-check that it works. You will know if it works because the name will now be printed along with the master branch. One critical point to realize if you want to create a new branch in this manner is that you will still be using the parent branch in your working directory. That should be easy to identify, given the asterisk (*) next to the master branch name.
+
+This is a significant point that you shouldn’t ignore. If you want to now switch to the newly created branch from the master, that is where the git checkout command will help you.
