@@ -830,3 +830,23 @@ git add file1.txt
 This will make sure that Git has added your changes to file1.txt to be staged. You can proceed with the rebase process now. Enter the following command to do so:
 
 git rebase --continue
+
+DIFF BETWEEN REBASE AND MERGING
+
+Diff between rebasing and Merging
+Created Monday 09 January 2023
+
+git merge and git rebase are often used for very similar tasks. These commands are used to alter commit histories of branches and integrate one branch with another.
+
+What is the difference between rebasing and merging?
+The significant differences to note between the two operations are as follows:
+
+Merging results in a new merge commit for the branch with which another is merged.
+Rebasing doesn’t result in any new commits. It updates the rebased branch’s commit history to look like it was taken out from a more recent version of the parent branch.
+--------------------
+When should you merge and when should you rebase?
+If more than one person is working on a particular branch, then, in that case, rebasing it would not be a good idea. Other collaborators will be routinely pulling the latest version of the branch on their local machines, unaware that someone rebased it, fundamentally altering its state and leading to inconsistent branches for everyone. However, if you’re the only person working on the branch, then rebasing is a very viable option to make sure that your branch is taken from the latest version of the parent branch.
+
+If you don’t want to alter the commit history of a branch, you should use git merge. git merge will retain the commit history as it is and add a new merge commit instead, while rebasing a branch will alter the commit history for that branch. This will be a less intense change for people collaborating on a branch since one person merging another branch with it would result in a new commit that others can then simply pull locally from a remote repository. If the branch were rebased and pushed to the remote repository, when others pull it, the updated branch would conflict with the local one even though it would be the same branch.
+
+Note: Reverting a rebase is a much more complicated process than reverting a merge in case there are many conflicts.
