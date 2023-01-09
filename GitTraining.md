@@ -795,3 +795,38 @@ Close the pull request without merging the branch if the proposed changes aren�
 Pull requests also allow you to view the entire list of commits and who made the commit.
 
 Pull requests also allow you to view the files that will be changed and how they will be changed in a convenient manner. Each line of code is colored, which represents whether that line was added, deleted, or was left unchanged. The green color shows that the new line was inserted, and a red-colored line would mean the line is meant to be removed. 
+
+MANAGING CONFLICTS IN REBASE
+
+Managing conflicts in rebase
+Created Monday 09 January 2023
+
+Managing Conflicts When Rebasing
+What happens if the rebase operation runs into conflicts? Let's take a look.
+
+Why conflicts can occur when rebasing
+What if you decided to rebase your branch with the latest version of the parent branch, which contains new commits that have changed the same files at the same location within those files where you have also included your changes?
+
+Do note that when a rebase is carried out, it takes place commit by commit. Therefore, what would happen if one of the parent branch’s commit conflicted with the changes one of your branch’s commit was trying to introduce? Git is not intelligent enough to decipher which changes to keep and which ones ought to be discarded.
+
+That’s where it will prompt the rebase not to be completed and will require you to handle the conflict by picking out the changes you want to keep and discarding the rest. Once you are done with that, you can choose to continue the rebase operation that had been paused. You can also choose to completely abort the rebase operation altogether if such a situation arises. You might realize that a large number of conflicts could occur with each new commit that is applied, making it troublesome to resolve every conflict.
+Let’s try to see how the example in the illustration above plays out in an actual terminal. There are two branches already created, master and new_branch.
+
+Both branches contain commits that alter the contents of file1.txt. There is one new commit on the master branch which was added after the new_branch had already been created. This commit is not a part of new_branch's commit history.
+
+In the terminal provided at the end of the lesson, checkout to the new_branch so that it becomes the currently active branch:
+
+git checkout new_branch
+In the working directory, enter the command:
+
+git rebase master
+You will get an error stating that the rebase could not be completed:
+This is how Git will display the conflict in file1.txt, by highlighting the content from each branch allowing you to visually differentiate it and also decide what to keep:
+Using any text editor you like, you can modify the contents of the file by removing changes you don’t want and keeping the ones you do. In the terminal provided below, you can either use nano or vim.
+
+Once you are done, you will enter the command:
+
+git add file1.txt
+This will make sure that Git has added your changes to file1.txt to be staged. You can proceed with the rebase process now. Enter the following command to do so:
+
+git rebase --continue
