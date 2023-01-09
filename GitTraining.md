@@ -641,3 +641,44 @@ In other words, the basic syntax for pushing a branch to a remote repository is:
 
 git push <remote_repository> <branch_name>
 And there you have it. You have successfully pushed your code to a remote repository.
+
+GIT CLONE
+
+GitClone
+Created Monday 09 January 2023
+
+Git Clone
+Learn how to clone remote repositories to your local machine in this lesson.The git clone command
+We can use the git clone command to clone or copy the entire codebase of a project from a remote repository and set it up as a local repository on our machines.
+
+While cloning the project, two more actions occur as well:
+
+The git clone command will also create a remote link to the remote repository being cloned and name it origin. This is similar to manually entering the command git remote add origin <remote_repository_url>.
+
+It will copy and set up the primary branch, which is the master branch in most cases, as the active branch in the working directory.
+
+You can test this command out yourself in the terminal provided at the end of the lesson. You can look up a repository on GitHub that you like and clone it.
+
+git clone <link_to_repository>
+--------------------
+Shallow cloning
+Sometimes, we might come across a remote repository that we want to clone, but its commit history might be too long, resulting in longer times to download and clone. This occurs when the project is very large and has a very large commit history. You can opt to clone the commit history up to a certain point by using the --depth flag.
+
+Try the following command in the terminal provided below:
+
+git clone <repository_url> --depth 1
+You can change the depth number according to your requirement.
+
+Try it yourself
+In the terminal provided below, try out the commands to clone a repository from GitHub on your own. You can clone a repository that you’ve created or clone any other repository you want. As an example, try cloning this repository:
+
+https://github.com/githubteacher/github-slideshow.git
+This is a simple public repository for getting familiar with GitHub. You don’t need to worry about the contents of the repository itself.
+
+You will need to enter the following command:
+
+git clone https://github.com/githubteacher/github-slideshow.git
+--------------------
+When you successfully clone the project, all of the project’s files will be available to you locally in a separate directory. Use the ls command to view the directory name. You will need to switch to the project directory using the cd command and verifying the contents.
+
+Try entering other Git related commands as well, such as git log and git branch, to test various aspects of the newly cloned repository.
