@@ -740,3 +740,18 @@ You will note that the currently active branch is master. Now, enter the followi
 git pull origin master
 You will notice an immediate difference between how the git fetch command worked and how the git pull command downloaded the remote branch. While it took two steps to download and merge the remote branch, you got the very same result with only one command using git pull.
 While the git fetch command only downloaded the remote branch, the git pull command downloaded and merged the remote branch into the local one as well.
+
+GIT REVERT
+
+Reverting to ealier commit
+Created Monday 09 January 2023
+
+Remember the git reset command which is useful in cases where you want to undo a recent change? Well, it is only useful when you wish to make changes to your commit history locally. However, this command is not helpful if we have pushed our commits to a remote repository. Changing the commit history on a remote repository will result in a history conflict with everyone who has a clone of that repository. The remote commit history will begin to differ from theirs.
+
+We can add a new commit to the remote repository that contains content from an older commit instead of the commit which contains any mistakes to address this issue.
+--------------------
+The git revert command
+In order to set an old commit, which is free from any known flaw, and have it set as our latest commit, we can use the following command:
+
+git revert HEAD~1
+git revert will add another commit on top of the commit that contains flaws in your code.
